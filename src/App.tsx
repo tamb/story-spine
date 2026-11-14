@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { createPortal } from "react-dom";
 import { Header } from "./components/Header.tsx";
 import { Library } from "./components/Library.tsx";
 import { Spine } from "./components/Spine.tsx";
@@ -211,27 +212,30 @@ export default function App() {
           in this browser.
         </p>
       </footer>
-      {pending ? (
-        <div className="modal-back">
-          <div
-            className="modal"
-            role="alertdialog"
-            aria-modal="true"
-            aria-labelledby="delete-title"
-          >
-            <h2 id="delete-title">Delete {displayTitle(pending.title)}?</h2>
-            <p>This removes the spine from this browser.</p>
-            <div className="modal-actions">
-              <button type="button" autoFocus onClick={() => setPendingDelete(null)}>
-                Cancel
-              </button>
-              <button type="button" className="primary" onClick={() => void confirmDelete()}>
-                Confirm delete
-              </button>
-            </div>
-          </div>
-        </div>
-      ) : null}
+      {pending
+        ? createPortal(
+            <div className="modal-back">
+              <div
+                className="modal"
+                role="alertdialog"
+                aria-modal="true"
+                aria-labelledby="delete-title"
+              >
+                <h2 id="delete-title">Delete {displayTitle(pending.title)}?</h2>
+                <p>This removes the spine from this browser.</p>
+                <div className="modal-actions">
+                  <button type="button" autoFocus onClick={() => setPendingDelete(null)}>
+                    Cancel
+                  </button>
+                  <button type="button" className="primary" onClick={() => void confirmDelete()}>
+                    Confirm delete
+                  </button>
+                </div>
+              </div>
+            </div>,
+            document.body,
+          )
+        : null}
     </>
   );
 }

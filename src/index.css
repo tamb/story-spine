@@ -334,6 +334,7 @@ h1 {
 .library {
   position: sticky;
   top: 4.75rem;
+  z-index: 1;
   background: color-mix(in srgb, var(--card) 88%, transparent);
   border: 1px solid var(--line);
   border-radius: 22px;
@@ -627,11 +628,11 @@ textarea {
 .modal-back {
   position: fixed;
   inset: 0;
-  background: color-mix(in srgb, var(--ink) 35%, transparent);
+  background: color-mix(in srgb, var(--ink) 48%, transparent);
   display: grid;
   place-items: center;
   padding: 1rem;
-  z-index: 10;
+  z-index: 30;
 }
 
 .modal {
