@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Story Spine">
+  <rect width="32" height="32" rx="8" fill="#6e1f22"/>
+  <path d="M16 6.5v19" stroke="#f3ecdf" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="16" cy="8.5" r="2.1" fill="#e7c27a"/>
+  <circle cx="16" cy="16" r="2.1" fill="#f3ecdf"/>
+  <circle cx="16" cy="23.5" r="2.1" fill="#e7c27a"/>
+</svg>
