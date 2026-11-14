@@ -58,7 +58,7 @@ export function Header({ length, writing, onLength, onWriting }: HeaderProps) {
       <p className="lede">
         {length === "shortened"
           ? "Nine beats, from the world as it is to the moral."
-          : "Eleven beats, with the dramatic question and the fallout of the climax."}
+          : "Seventeen beats, from the foundation to the moral."}
       </p>
     </header>
   );

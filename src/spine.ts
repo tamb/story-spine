@@ -27,61 +27,27 @@ export const SHORTENED_BEATS: readonly BeatDefinition[] = [
 ];
 
 export const FULL_BEATS: readonly BeatDefinition[] = [
+  { id: "once-upon", prompt: "Once upon a time…", hint: "Foundation" },
+  { id: "every-day", prompt: "Every day…", hint: "Foundation" },
+  { id: "but-one-day", prompt: "But one day…", hint: "First Significant Event" },
+  { id: "because-1", prompt: "Because of that…", hint: "Foundation Focus" },
+  { id: "because-2", prompt: "Because of that…", hint: "Foundation Focus" },
+  { id: "because-3", prompt: "Because of that…", hint: "Foundation Focus" },
   {
-    id: "once-upon",
-    prompt: "Once upon a time…",
-    hint: "Introduce the protagonist and their world",
+    id: "and-thats-when",
+    prompt: "And that's when…",
+    hint: "First Significant Repercussion",
   },
-  {
-    id: "every-day",
-    prompt: "Every day…",
-    hint: "Establish the routine or status quo",
-  },
-  {
-    id: "but-one-day",
-    prompt: "But, one day…",
-    hint: "The inciting incident that disrupts the routine",
-  },
-  {
-    id: "question",
-    prompt: "Which raised the question…",
-    hint: "Establishes the central dramatic question—what the audience is rooting for the protagonist to achieve or resolve",
-  },
-  {
-    id: "because-1",
-    prompt: "Because of that…",
-    hint: "First consequence or action taken",
-  },
-  {
-    id: "because-2",
-    prompt: "Because of that…",
-    hint: "Second consequence or escalating complication",
-  },
-  {
-    id: "because-3",
-    prompt: "Because of that…",
-    hint: "Third consequence or crisis point",
-  },
-  {
-    id: "until-finally",
-    prompt: "Until, finally…",
-    hint: "The climax that answers the central dramatic question",
-  },
-  {
-    id: "meant",
-    prompt: "Which meant that…",
-    hint: "The immediate fallout or falling action of the climax",
-  },
-  {
-    id: "ever-since",
-    prompt: "And, ever since then…",
-    hint: "The new normal",
-  },
-  {
-    id: "moral",
-    prompt: "And the moral of the story is…",
-    hint: "The thematic takeaway",
-  },
+  { id: "question", prompt: "Which raised the question…", hint: "Question of the Story" },
+  { id: "funnel-1", prompt: "Because of that…", hint: "Foundation Funnel" },
+  { id: "funnel-2", prompt: "Because of that…", hint: "Foundation Funnel" },
+  { id: "funnel-3", prompt: "Because of that…", hint: "Foundation Funnel" },
+  { id: "until-finally", prompt: "Until finally…", hint: "Climax" },
+  { id: "end-1", prompt: "Because of that…", hint: "The End" },
+  { id: "end-2", prompt: "Because of that…", hint: "The End" },
+  { id: "end-3", prompt: "Because of that…", hint: "The End" },
+  { id: "ever-since", prompt: "And ever since then…", hint: "The End" },
+  { id: "moral", prompt: "And the moral of the story is…" },
 ];
 
 export function beatsFor(length: SpineLength): readonly BeatDefinition[] {

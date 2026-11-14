@@ -23,21 +23,41 @@ describe("Story Spine beats", () => {
     expect(FULL_BEATS.map((beat) => beat.prompt)).toEqual([
       "Once upon a time…",
       "Every day…",
-      "But, one day…",
+      "But one day…",
+      "Because of that…",
+      "Because of that…",
+      "Because of that…",
+      "And that's when…",
       "Which raised the question…",
       "Because of that…",
       "Because of that…",
       "Because of that…",
-      "Until, finally…",
-      "Which meant that…",
-      "And, ever since then…",
+      "Until finally…",
+      "Because of that…",
+      "Because of that…",
+      "Because of that…",
+      "And ever since then…",
       "And the moral of the story is…",
     ]);
-    expect(FULL_BEATS[0]?.hint).toBe("Introduce the protagonist and their world");
-    expect(FULL_BEATS[3]?.hint).toBe(
-      "Establishes the central dramatic question—what the audience is rooting for the protagonist to achieve or resolve",
-    );
-    expect(FULL_BEATS[8]?.hint).toBe("The immediate fallout or falling action of the climax");
-    expect(FULL_BEATS[10]?.hint).toBe("The thematic takeaway");
+    expect(FULL_BEATS.map((beat) => beat.hint ?? null)).toEqual([
+      "Foundation",
+      "Foundation",
+      "First Significant Event",
+      "Foundation Focus",
+      "Foundation Focus",
+      "Foundation Focus",
+      "First Significant Repercussion",
+      "Question of the Story",
+      "Foundation Funnel",
+      "Foundation Funnel",
+      "Foundation Funnel",
+      "Climax",
+      "The End",
+      "The End",
+      "The End",
+      "The End",
+      null,
+    ]);
+    expect(new Set(FULL_BEATS.map((beat) => beat.id)).size).toBe(FULL_BEATS.length);
   });
 });
