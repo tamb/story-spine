@@ -22,11 +22,16 @@ describe("export", () => {
     expect(markdown).toContain("# The Clockmaker");
     expect(markdown).toContain("*Story Spine by Kenn Adams · Full length*");
     expect(markdown).toContain("## 1. Once upon a time…");
-    expect(markdown).toContain("*Introduce the protagonist and their world*");
+    expect(markdown).toContain("*Foundation*");
     expect(markdown).toContain("A clockmaker ignored the town clock.");
-    expect(markdown).toContain("## 4. Which raised the question…");
+    expect(markdown).toContain("## 4. Because of that…\n\n*Foundation Focus*\n\nHe hid the key.");
+    expect(markdown).toContain("## 7. And that's when…");
+    expect(markdown).toContain("## 8. Which raised the question…\n\n*Question of the Story*");
     expect(markdown).toContain("Would anyone notice the lost hour?");
-    expect(markdown).toContain("## 9. Which meant that…");
+    expect(markdown).toContain("## 12. Until finally…\n\n*Climax*");
+    expect(markdown).toContain("## 16. And ever since then…\n\n*The End*");
+    expect(markdown).toContain("## 17. And the moral of the story is…");
+    expect(markdown).not.toContain("Which meant that…");
     expect(markdown).not.toContain("Sometimes phrased as");
   });
 

@@ -30,18 +30,23 @@ describe("Story Spine app", () => {
     expect(screen.queryByRole("textbox")).not.toBeInTheDocument();
 
     await user.click(screen.getByRole("radio", { name: "Full length" }));
-    expect(screen.getAllByRole("checkbox")).toHaveLength(11);
-    expect(screen.getByText("Which raised the question…")).toBeInTheDocument();
-    expect(screen.getByText("Which meant that…")).toBeInTheDocument();
+    expect(screen.getAllByRole("checkbox")).toHaveLength(17);
     expect(
-      screen.getByText(
-        "Establishes the central dramatic question—what the audience is rooting for the protagonist to achieve or resolve",
-      ),
+      screen.getByText("Seventeen beats, from the foundation to the moral."),
     ).toBeInTheDocument();
+    expect(screen.getByText("And that's when…")).toBeInTheDocument();
+    expect(screen.getByText("Which raised the question…")).toBeInTheDocument();
+    expect(screen.getByText("Question of the Story")).toBeInTheDocument();
+    expect(screen.getAllByText("Foundation Funnel")).toHaveLength(3);
+    expect(screen.getByText("Until finally…")).toBeInTheDocument();
+    expect(screen.getAllByText("Because of that…")).toHaveLength(9);
+    expect(screen.getByText("And ever since then…")).toBeInTheDocument();
+    expect(screen.getByText("And the moral of the story is…")).toBeInTheDocument();
+    expect(screen.queryByText("Which meant that…")).not.toBeInTheDocument();
 
     await user.click(screen.getByRole("radio", { name: "Shortened" }));
     expect(screen.getAllByRole("checkbox")).toHaveLength(9);
-    expect(screen.queryByText("Which meant that…")).not.toBeInTheDocument();
+    expect(screen.queryByText("And that's when…")).not.toBeInTheDocument();
   });
 
   it("remembers reference checks in this browser", async () => {
@@ -73,11 +78,11 @@ describe("Story Spine app", () => {
     expect(await screen.findByText("Saved")).toBeInTheDocument();
 
     await user.click(screen.getByRole("radio", { name: "Full length" }));
-    expect(screen.getAllByRole("textbox")).toHaveLength(12);
+    expect(screen.getAllByRole("textbox")).toHaveLength(18);
     expect(screen.getByRole("textbox", { name: /Beat 1\. Once upon a time/ })).toHaveValue(
       "A clockmaker ignored the town clock.",
     );
-    const question = screen.getByRole("textbox", { name: /Which raised the question/ });
+    const question = screen.getByRole("textbox", { name: /Beat 8\. Which raised the question/ });
     await user.type(question, "Would the town notice?");
     expect(await screen.findByText("Saving…")).toBeInTheDocument();
     expect(await screen.findByText("Saved")).toBeInTheDocument();
@@ -87,12 +92,14 @@ describe("Story Spine app", () => {
       screen.queryByRole("textbox", { name: /Which raised the question/ }),
     ).not.toBeInTheDocument();
     await user.click(screen.getByRole("radio", { name: "Full length" }));
-    expect(screen.getByRole("textbox", { name: /Which raised the question/ })).toHaveValue(
+    expect(screen.getByRole("textbox", { name: /Beat 8\. Which raised the question/ })).toHaveValue(
       "Would the town notice?",
     );
 
-    await user.click(screen.getByRole("button", { name: "Clear beat 4" }));
-    expect(screen.getByRole("textbox", { name: /Which raised the question/ })).toHaveValue("");
+    await user.click(screen.getByRole("button", { name: "Clear beat 8" }));
+    expect(screen.getByRole("textbox", { name: /Beat 8\. Which raised the question/ })).toHaveValue(
+      "",
+    );
     expect(await screen.findByText("Saving…")).toBeInTheDocument();
     expect(await screen.findByText("Saved")).toBeInTheDocument();
 
